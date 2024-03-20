@@ -23,5 +23,5 @@ TF-IDF (Term Frequency-Inverse Document Frequency) is a widely used technique in
 2. **Configure MySQL Database:**
    - Create a MySQL database
    - Update the database configuration in application.properties file with your MySQL credentials.
-3. **Build and Run the Application:** Go to 'JobportalprojectApplication' run main method.
+3. **Build and Run the Application:** Go to `JobportalprojectApplication` file and run main method.
 4. **Access the Application:** Once the application is running, you can access it at `http://localhost:8080`.
