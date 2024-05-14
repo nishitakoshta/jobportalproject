@@ -8,14 +8,17 @@ This project is a backend implementation of a Job Board Platform built using Spr
 2. **Spring Boot:** Framework for building robust and scalable applications.
 3. **Gradle:** Build automation tool used for managing dependencies and building the project.
 4. **MySQL:**  Relational database management system used for storing job listings and user information.
+5. **Swagger**: Tool for API documentation and testing.
+6. **JWT (JSON Web Tokens)**: For secure authentication and authorization.
 
 #### **TF-IDF Introduction:**
 TF-IDF (Term Frequency-Inverse Document Frequency) is a widely used technique in information retrieval and text mining to evaluate the importance of a word in a document relative to a collection of documents. It helps in ranking the relevance of documents based on a query. In this project, TF-IDF is used to implement advanced search functionality, providing users with more accurate and relevant search results.
 
 #### **Features:**
-1. **User Registration and Authentication:** Users can register an account and log in securely.
+1. **User Registration and Authentication:** Users can register an account and log in securely using JWT.
 2. **Advanced Search:** Implemented advanced search functionality using the TF-IDF algorithm to rank search results based on relevance.
 3. **Filtering:** Users can filter job listings based on criteria such as location, category, and keywords.
+4. **API Documentation:** Swagger is integrated for API documentation and testing.
 
 #### **How to Use:**
 1. **Clone the Repository:**
