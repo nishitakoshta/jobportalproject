@@ -6,10 +6,12 @@ import com.personal.jobportal.jobportalproject.repository.JobRepository;
 import com.personal.jobportal.jobportalproject.repository.TfIdfRepository;
 import com.personal.jobportal.jobportalproject.service.TfIdfService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+@Service
 public class TfIdfServiceImpl implements TfIdfService {
     @Autowired
     private JobRepository jobRepository;

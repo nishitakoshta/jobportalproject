@@ -1,4 +1,5 @@
 package com.personal.jobportal.jobportalproject.service.impl;
+import com.personal.jobportal.jobportalproject.config.JwtService;
 import com.personal.jobportal.jobportalproject.dto.ApplicationDTO;
 import com.personal.jobportal.jobportalproject.dto.ApplicationListDTO;
 import com.personal.jobportal.jobportalproject.dto.UpdateApplicationResponseDTO;
@@ -11,8 +12,9 @@ import com.personal.jobportal.jobportalproject.repository.ApplicationsRepository
 import com.personal.jobportal.jobportalproject.repository.JobRepository;
 import com.personal.jobportal.jobportalproject.repository.UserRepository;
 import com.personal.jobportal.jobportalproject.service.ApplicationsService;
-import com.personal.jobportal.jobportalproject.service.JwtService;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +27,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 @Service
+@AllArgsConstructor
+@Slf4j
 public class ApplicationsServiceImpl implements ApplicationsService {
     @Autowired
     private UserRepository userRepository;
@@ -37,9 +41,8 @@ public class ApplicationsServiceImpl implements ApplicationsService {
     @Override
     public ApplicationDTO applyForJob(ApplicationDTO applicationDTO, String token) throws EmployerRoleException {
         Applications applications = new Applications();
-        Integer jobSeekerId = jwtService.extractUserId(token);
-        Users jobSeeker = userRepository.findById(jobSeekerId)
-                .orElseThrow(()-> new EntityNotFoundException("Job seeker not found with id "+jobSeekerId));
+        Users jobSeeker = userRepository.findById(1)
+                .orElseThrow(()-> new EntityNotFoundException("Job seeker not found with id "+1));
         if (jobSeeker.getRole() == 0) {
             applications.setJobSeeker(jobSeeker);
         } else {

@@ -1,4 +1,5 @@
 package com.personal.jobportal.jobportalproject.service.impl;
+import com.personal.jobportal.jobportalproject.config.JwtService;
 import com.personal.jobportal.jobportalproject.dto.FilterJobDTO;
 import com.personal.jobportal.jobportalproject.dto.FilterPayloadDTO;
 import com.personal.jobportal.jobportalproject.dto.JobDTO;
@@ -9,9 +10,9 @@ import com.personal.jobportal.jobportalproject.exception.EmployerRoleException;
 import com.personal.jobportal.jobportalproject.repository.JobRepository;
 import com.personal.jobportal.jobportalproject.repository.UserRepository;
 import com.personal.jobportal.jobportalproject.service.JobsService;
-import com.personal.jobportal.jobportalproject.service.JwtService;
 import com.personal.jobportal.jobportalproject.service.TfIdfService;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 @Service
+@RequiredArgsConstructor
 public class JobServiceImpl implements JobsService {
     @Autowired
     private UserRepository userRepository;
